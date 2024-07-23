@@ -9,7 +9,7 @@ Amplify.configure({...config,
   Auth: {
           cookieStorage: {
     // - Cookie domain (only required if cookieStorage is provided)
-    domain: '.meghasv.in',
+    domain: '*.meghasv.in',
     // (optional) - Cookie path
     path: '/',
     // (optional) - Cookie expiration in days
