@@ -1,4 +1,6 @@
 import { Amplify } from 'aws-amplify';
+import { CookieStorage } from 'aws-amplify/utils';
+import { cognitoUserPoolsTokenProvider } from 'aws-amplify/auth/cognito';
 
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
@@ -22,6 +24,8 @@ Amplify.configure({...config,
   },
 }
 })
+
+cognitoUserPoolsTokenProvider.setKeyValueStorage(new CookieStorage());
 
 function App({ signOut, user }) {
   return (
